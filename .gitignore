@@ -33,5 +33,6 @@ venv/
 sklearn-env/
 tf-env/
 model/data/
+model/svm.pkl
 /.venv/
 /venv/
