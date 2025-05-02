@@ -1,0 +1,92 @@
+:root {
+    --bg-color: #dcdcd1bc; /* Soft light gray background */
+    --bg-l-oval: #7d7d7de7; /* Soft light gray background */
+    --bg-d-oval: #8c8c887a; /* Soft light gray background */
+    --text-color: rgb(50, 50, 50); /* Darker text color for readability */
+    --button-bg: #72b074fa; /* Soft green background for buttons */
+    --button-b: #3e633ffa; /* Soft green background for buttons */
+    --button-text: white; /* White button text */
+    --input-bg: #dcdcd1; /* Light input background */
+    --input-text: rgb(220, 220, 220); /* Dark input text */
+    --input-border: linear-gradient(to top, #37ecba 0%, #72afd3 100%); /* Light input border */
+    --button-shadow: #72afd3;
+    --button-switch: rgb(34, 34, 51);
+    --text-switch: #ffffff;
+}
+
+body {
+    width: 250px;
+    height: 350px;
+    background-color: #dcdcd1bc;
+    color: rgb(0, 0, 0);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    align: center;
+}
+
+h2 {
+    font-size: 18px;
+    text-align: center; /* Centers text horizontally */
+    display: block; /* Ensures full width */
+    margin-top: 20px; /* Adds spacing */
+}
+
+#inputText {
+    margin-top: 20px; /* Adds spacing */
+    display: block;
+    width: 80%;
+    height: 40%; /* Adjust height */
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 14px;
+    color: var(--text-color);
+    background: var(--bg-d-oval);
+    border: 2px solid transparent;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    resize: none; /* Allow user to resize vertically */
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: pre-wrap; /* Preserve spaces and line breaks*/
+}
+
+#inputText:focus {
+    border: 2px solid var(--button-bg);
+    box-shadow: 0px 0px 5px var(--button-bg);
+}
+
+
+/* Enter button with Glassmorphism Effect */
+#checkButton {
+    display: block;
+    width: 110px;
+    padding: 10px;
+    margin: 15px auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: var(--button-bg);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+#checkButton:hover {
+    background: var(--button-b);
+    transform: scale(1.05);
+}
+
+/* Click Effect */
+#checkButton:active {
+    transform: scale(0.95);
+}
+
+
+#result {
+    font-size: 14px;
+    text-align: center; /* Centers text horizontally */
+    display: block; /* Ensures full width */
+    margin-top: 20px; /* Adds spacing */
+}

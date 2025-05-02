@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Spam Checker",
+  "version": "1.0",
+  "description": "Check if selected text is spam.",
+  "permissions": ["contextMenus", "storage", "activeTab"],
+"host_permissions": [
+  "https://group11spamapi-bbbjfpdkhpd3g9ev.westeurope-01.azurewebsites.net/*"
+],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}

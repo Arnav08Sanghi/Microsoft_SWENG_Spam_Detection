@@ -1,0 +1,621 @@
+/* Default (Light Mode) Variables */
+:root {
+  --bg-color: #dcdcd1bc; /* Soft light gray background */
+  --bg-l-oval: #7d7d7de7; /* Soft light gray background */
+  --bg-d-oval: #8c8c887a; /* Soft light gray background */
+  --text-color: rgb(50, 50, 50); /* Darker text color for readability */
+  --button-bg: #72b074fa; /* Soft green background for buttons */
+  --button-b: #3e633ffa; /* Soft green background for buttons */
+  --button-text: white; /* White button text */
+  --stats-bg: #d1d1bf;
+  --input-bg: #dcdcd1; /* Light input background */
+  --input-text: rgb(220, 220, 220); /* Dark input text */
+  --input-border: linear-gradient(to top, #37ecba 0%, #72afd3 100%); /* Light input border */
+  --button-shadow: #72afd3;
+  --button-switch: rgb(34, 34, 51);
+  --text-switch: #ffffff;
+}
+/* Dark Mode Variables */
+.dark-mode {
+  --bg-color: rgb(34, 34, 51); /* Dark purplish-blue background */
+  --bg-l-oval: rgb(101, 101, 137); /* Soft light gray background */
+  --bg-d-oval: rgb(54, 56, 78); /* Soft light gray background */
+  --text-color: rgb(220, 220, 220); /* Light gray text for readability */
+  --button-bg: #8e44ad; /* Dark purple button background */
+  --button-b: #432152; /* Dark purple button background */
+  --button-text: white; /* White button text */
+  --input-bg: #2c3e50; /* Darker input background */
+  --input-text: rgb(220, 220, 220); /* Light gray input text */
+  --input-border: linear-gradient(-45deg, #9b59b6, #3498db); /* Darker input border */
+  --button-shadow:  #3498db; /* Purple-blue shadow */
+  --button-switch: #dcdcd1;
+  --text-switch: #432152;
+}
+
+/* Example usage in the body */
+body {
+background-color: var(--bg-color);
+color: var(--text-color);
+/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+transition: background-color 0.3s, color 0.3s ease;
+overflow: auto;
+}
+
+/* Container for logo and title */
+.container {
+display: flex;
+justify-content: left;
+align-items: left;
+padding-top: 20px;
+padding-bottom: 10px;
+padding-left: 165px;
+margin-top: -9px;
+}
+
+/* Styling for logo image */
+.web-logo {
+width: 200px;
+height: auto;
+border-radius: 10px;
+}
+
+/* Title text styling */
+.title-text {
+/*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+/* /font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+text-align: center;
+margin-top: 20px;
+font-size: 24px;
+}
+
+
+/* Input and Output layout */
+.input-output {
+display: flex;
+flex-direction: row; /* Keep input and output side by side */
+align-items: flex-start; /* Align input and output at the top */
+justify-content: center; /* Center horizontally */
+gap: 100px; /* Space between input and output */
+margin-top: 140px;
+}
+
+/* Input box container */
+.input-container {
+margin-top: -19px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+.switch-buttons {
+/*justify-content: flex-start; /* Override centering and align buttons to the left */
+align-items: right;
+display: flex;
+flex-direction: row;  /* Stack buttons vertically */
+position: relative;
+top: -30px;
+left: -170px;
+gap: 10px;  /* Space between buttons */
+}
+
+.switch-buttons button {
+background-color: var(--button-bg);
+color: var(--button-text);
+border: none;
+padding: 10px 16px;
+font-size: 14px;
+cursor: pointer;
+border-radius: 5px;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.text:hover {
+transform: translateY(-5px); /* Moves button 10px up */
+}
+
+.twitter:hover {
+transform: translateY(-5px); /* Moves button 10px up */
+}
+
+.pressed {
+background-color: var(--button-switch) !important; /* Change color to indicate it's pressed */
+color: var(--text-switch) !important;
+}
+
+
+/* Code for Delete Button */
+.delete-button {
+top: -60px;
+left: 220px;
+position: relative;
+padding: 0.5em;
+border: none;
+background: none;
+cursor: pointer;
+transition: transform 0.2s ease;
+z-index: 99;
+}
+
+.trash-svg {
+width: 40px;
+height: 40px;
+transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+overflow: visible;
+}
+
+#lid-group {
+transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.delete-button:hover #lid-group {
+transform: rotate(-28deg) translateX(-9px) translateY(2px);
+}
+
+.delete-button:active #lid-group {
+transform: rotate(-12deg) scale(0.98);
+}
+
+.delete-button:hover .trash-svg {
+transform: scale(1.08) rotate(3deg);
+}
+
+.delete-button:active .trash-svg {
+transform: scale(0.96) rotate(-1deg);
+}
+
+
+
+
+/* Output container with gradient blur shadow */
+.output-container {
+  position: relative;
+  width: 500px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  resize: none; /* Prevent resizing */
+  border: 3px solid var(--input-border); /* Make sure border is visible */
+  border-radius: 14px;
+  background-color: var(--input-bg);
+  padding: 10px;
+  /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+  font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column; /* Stack input and button vertically */
+  align-items: center; /* Center input and button */
+  justify-content: center;
+}
+
+
+
+.stats-popup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows */
+
+
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  position: absolute;
+  top: 100%; /* Position below the output_container */
+  left: 0; /* Align with the left side of the output_container */
+  margin-top: 10px; /* Optional: Add some spacing between the output container and the popup */
+  height: 120px;
+  width: 500px; /* Initial width for expansion */
+  border: 2px solid var(--input-border);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--stats-bg);
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  overflow: hidden;
+
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+
+}
+
+.stats-popup p {
+  font-size: 16px;
+}
+
+.stats-popup.expand {
+  width: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.stats-popup.collapse {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.info-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+}
+
+.info-button:hover {
+  transform: scale(110%);
+}
+
+/* Active effect */
+.info-button:active {
+  transform: scale(0.98);
+}
+
+
+.stat-item {
+  margin-top: -10px;
+  font-size: 10px;
+}
+
+.progress-bar-container {
+  width: 110%;
+  height: 10px;
+  background-color: #ddd; /* Light gray background */
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Spam text box with gradient blur shadow effect */
+.spamText {
+width: 500px; /* Fixed width */
+height: 200px; /* Fixed height */
+resize: none; /* Prevent resizing */
+color: var(--text-color);
+padding: 10px;
+/*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+font-size: 16px;
+border: 1px var(--input-border);
+border-radius: 14px;
+background-color: var(--input-bg);
+}
+
+/* Enter button with Glassmorphism Effect */
+.enter-button {
+position: relative;
+margin-top: 5px; /* Spacing below input box */
+background: var(--button-bg); /* Transparent frosted glass effect */
+backdrop-filter: blur(10px); /* Blur effect for glass look */
+-webkit-backdrop-filter: blur(10px); /* Safari support */
+color: var(--button-text);
+padding: 15px 32px;
+font-size: 16px;
+border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+border-radius: 14px;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+width: 450px; 
+text-align: center;
+z-index: 1;
+/*box-shadow: 0 4px 10px var(--button-shadow); /* Soft glow effect */
+}
+
+/* Glow and Blur Effects */
+.enter-button::before {
+content: "";
+position: absolute;
+inset: -3px; /* Slightly larger glow area */
+background: var(--button-bg); /* Light overlay */
+border-radius: 12px;
+z-index: -1;
+}
+
+/* Hover effect */
+.enter-button:hover {
+background: var(--button-b); /* Slightly lighter */
+/*box-shadow: 0 6px 15px var(--button-shadow); /* Stronger glow */
+transform: scale(1.05); /* Slight pop */
+
+}
+
+/* Active effect */
+.enter-button:active {
+transform: scale(0.98);
+}
+
+.switch {
+font-size: 17px;
+position: fixed;
+top: 110px;
+right: 180px;
+z-index: 1;
+display: inline-block;
+width: 120px;  /* Increased width to accommodate larger icons */
+height: 50px;  /* Increased height */
+border-radius: 30px;
+}
+
+.input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.sun {
+position: absolute;
+top: 14px;  /* Adjusted positioning */
+left: 80px; /* Adjusted positioning */
+z-index: 1;
+transform: scale(1);  /* Size scaling */
+}
+
+.moon {
+position: absolute;
+top: 14px;  /* Adjusted positioning */
+left: 15px;  /* Adjusted positioning */
+z-index: 1;
+transform: scale(1);  /* Size scaling */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #6ead6d;
+  transition: .4s;
+  border-radius: 30px;
+  width: 100%;  
+  height: 100%; 
+}
+
+.slider::before {
+position: absolute;
+content: "";
+height: 40px;
+width: 40px;
+border-radius: 24px;
+left: 5px;
+bottom: 5px;
+z-index: 9999;
+background-color: #ffffff;
+transition: .4s;
+}
+
+.input:checked + .slider:before {
+transform: translateX(66px);
+}
+
+.input:checked + .slider {
+background-color: #183153;
+}
+
+/* Container for the Enter button and the hover GIF */
+.gif-button-container {
+position: relative;
+display: inline-block;
+width: 200px;        /* match the button width */
+height: 60px;        /* match the button height */
+border-radius: 8px;  /* same rounding as the button */
+overflow: hidden;    /* crop GIF to match the rounded corners */
+}
+
+
+/* The hover GIF fills the container */
+.hover-gif {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;         /* fill container vertically */
+object-fit: cover;    /* crop if aspect ratio differs */
+pointer-events: none;
+opacity: 0;           /* hidden by default */
+transition: opacity 0.3s ease;
+}
+
+
+/* Footer container styles */
+.footer-container {
+text-align: right;
+padding-right: 165px;
+margin-top: 120px;               /* Adjust spacing as needed */
+border-top: 1px solid #000000; /* A green line above the footer */
+padding-top: 10px;             /* Space between the line and the footer text */
+}
+/* Footer text styling */
+.footer-text {
+  font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 16px; /* Pick any size you want */
+  color: #000000;
+  margin-bottom: 10px;
+  font-weight: bold; /* or use a numeric value like 700 */
+}
+
+/* Contact icon container styles */
+.contact-boxes {
+display: flex;
+justify-content: right; /* Centers the icons horizontally */
+gap: 15px; /* Space between icons */
+margin-top: 15px;
+}
+
+/* Styling for each icon */
+.contact-icon {
+width: 40px;  /* Set a fixed size for the icons */
+height: 40px;
+cursor: pointer; /* Makes the icons clickable */
+transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effects */
+}
+
+.contact-icon:hover {
+transform: scale(1.1);  /* Slightly enlarges the icons when hovered */
+filter: brightness(1.2); /* Slightly increases brightness when hovered */
+transform: translateY(-5px); /* Moves button 10px up */
+}
+
+
+
+
+/* BACKGROUND OVALS */
+
+/* Base styling for ovals */
+/* Style for the container that holds the ovals */
+.animate-display {
+position: absolute;
+height: 100vh; /* Full viewport height */
+width: 100%;
+overflow: hidden; /* Prevents any part of the ovals from overflowing */
+z-index: -2; /* Ensure everything inside this container stays above the ovals */
+}
+
+/* General oval style */
+.oval {
+position: absolute; /* Ensures precise positioning */
+width: 1000px;  /* Wider width for pill shape */
+height: 500px;  /* Shorter height for pill shape */
+border-radius: 400px; /* Makes the edges fully rounded to form the pill */
+animation: rotateOval 50s infinite linear; /* Rotation animation */
+opacity: 0.7; /* Positions the ovals behind other content */
+}
+
+/* Dark oval specific styles */
+.dark-oval {
+background-color: var(--bg-d-oval); /* Dark Red */
+top: -150px;
+left: -500px;
+/*transform: translate(-50%, -50%); /* Ensures the center of the oval aligns with the top-left edge */
+}
+
+/* Light oval specific styles */
+.light-oval {
+background-color: var(--bg-l-oval); /* Light Blue */
+bottom: -150px;
+right: -500px;
+/*transform: translate(50%, 50%); /* Ensures the center of the oval aligns with the bottom-right edge */
+}
+
+/* Keyframes for rotating the ovals */
+@keyframes rotateOval {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+
+.about-container {
+padding: 50px;
+margin: auto; 
+/* margin-top: 100px !important; */
+max-width: 800px;
+background-color: var(--input-bg);
+color: var(--text-color);
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.about-container h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+
+
+/* sustainablity box*/
+
+.sus_box {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 340px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  /*background: #3bac5d;*/
+  background: #dcdcd1;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px -3px #111;
+
+  /* Make it float above everything else */
+  position: absolute !important; /* Use fixed positioning */
+  top: 42%; /* Adjust the distance from the top of the screen */
+  left: 66%; /* Center it horizontally */
+  transform: translateX(-50%); /* Perfect centering */
+  
+  z-index: 9999; /* Ensure it appears above other elements */
+
+}
+
+.sus__icon {
+width: 20px;
+height: 20px;
+transform: translateY(-2px);
+margin-right: 8px;
+}
+
+.sus__icon path {
+fill: #fff;
+}
+
+.leaf__icon path{
+fill: #fff;
+}
+
+.sus__title {
+padding-left: 15px;
+margin-top: -5px;
+font-weight: 500;
+font-size: 13px;
+color: #000000;
+}
+
+.sus__close {
+width: 20px;
+height: 20px;
+cursor: pointer;
+margin-left: auto;
+}
+
+.sus__close path {
+  fill: #000000;
+}

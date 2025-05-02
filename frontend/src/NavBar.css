@@ -1,0 +1,81 @@
+/* Default (Light Mode) Variables */
+:root {
+  --bg-color: #dcdcd1bc; /* Soft light gray background */
+  --bg-l-oval: #7d7d7de7; /* Soft light gray background */
+  --bg-d-oval: #8c8c887a; /* Soft light gray background */
+  --text-color: 000000fa; /* Darker text color for readability */
+  --button-bg: #72b074fa; /* Soft green background for buttons */
+  --button-b: #3e633ffa; /* Soft green background for buttons */
+  --button-text: white; /* White button text */
+  --input-bg: #dcdcd1; /* Light input background */
+  --input-text: rgb(220, 220, 220); /* Dark input text */
+  --input-border: linear-gradient(to top, #37ecba 0%, #72afd3 100%); /* Light input border */
+  --button-shadow: #72afd3;
+  --button-switch: rgb(34, 34, 51);
+  --text-switch: #ffffff;
+
+}
+/* Dark Mode Variables */
+.dark-mode {
+  --bg-color: rgb(34, 34, 51); /* Dark purplish-blue background */
+  --bg-l-oval: rgb(101, 101, 137); /* Soft light gray background */
+  --bg-d-oval: rgb(54, 56, 78); /* Soft light gray background */
+  --text-color: rgb(220, 220, 220); /* Light gray text for readability */
+  --button-bg: #8e44ad; /* Dark purple button background */
+  --button-b: #432152; /* Dark purple button background */
+  --button-text: white; /* White button text */
+  --input-bg: #2c3e50; /* Darker input background */
+  --input-text: rgb(220, 220, 220); /* Light gray input text */
+  --input-border: linear-gradient(-45deg, #9b59b6, #3498db); /* Darker input border */
+  --button-shadow:  #3498db; /* Purple-blue shadow */
+  --button-switch: #dcdcd1;
+  --text-switch: #432152;
+
+}
+
+
+
+
+
+.navbar {
+  /* Center it within the page and give rounded corners */
+  width: 80%;               /* Adjust as desired (e.g., 70%, 90%, etc.) */
+  margin: 1rem auto;        /* Auto horizontal margin centers the bar */
+  border-radius: 30px;      /* Rounded corners */
+  background-color: var(--input-bg);
+  /* Basic layout */
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  
+  /* Left section: site title */
+  .nav-left .site-title {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 2.3rem;        /* Bigger font */
+    font-weight: 700;         /* Bold */
+    margin: 0;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  /* Center section: links */
+  .nav-center {
+    display: flex;
+    justify-content: flex-end; /* Move the links to the right */
+    gap: 2rem;                 /* Space between links */
+    margin-left: auto;         /* Pushes the links as far right as possible */
+  }
+  
+  /* Link styling */
+  .nav-center a {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1.25rem;   /* Increase as needed (e.g., 1.2rem) */
+    font-weight: 700;  /* Bold */
+    text-decoration: none;
+    color: var(--text-color);;
+  }
+  
+  .nav-center a:hover {
+    text-decoration: underline;
+  }
+}
