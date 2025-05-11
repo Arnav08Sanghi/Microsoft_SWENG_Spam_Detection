@@ -111,7 +111,7 @@ function InputOutput() {
 
   
         <div className="output-container">
-            <Stats accuracy={83.4} precision={84} recall={83.7} f1={0.83} />
+            <Stats accuracy={83.4} precision={7} recall={55} f1={0.83} />
             <h2>
                 {output === 1 ? "This message is spam!" : output === 0 ? "This message is not spam" : "Waiting for input..."}
             </h2>
